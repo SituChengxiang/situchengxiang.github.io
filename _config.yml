@@ -1,15 +1,15 @@
-title: 司徒和丞相的blog #博客标题
-description: Just 4 Present. #博客描述
-keywords: blog #博客关键字
-author: "司徒和丞相"
+title: 司徒和丞相 #博客标题
+description: Just 4 PPT. #博客描述
+keywords: blog,css,html #博客关键字
+author: "Kuan"
 
 #title hide and show
 hide: (つェ⊂)我藏好啦
 show: ´∇｀ 呀被发现啦~ 
 
-baseurl: "" # change this to the subpath of your site, e.g. /blog. Leave it empty if in root.
-url: "situchengxiang.github.io" # change this to the base hostname & protocol for your site
-buildtime: "1729669007" #博客建立时的时间戳 可进入https://tool.lu/timestamp/将博客建立时的日期转换成时间戳
+baseurl: "" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
+url: "hydrogen.atlinker.cn" # change this to the base hostname & protocol for your site
+buildtime: "1729669978" #博客建立时的时间戳 可进入https://tool.lu/timestamp/将博客建立时的日期转换成时间戳
            #The timestamp at the time of blog establishment can be entered at https://tool.lu/timestamp/to convert the date at the time of blog establishment into a timestamp.
 
 PJAX: true #启用PJAX，会与评论系统冲突（如不用评论系统建议开启）
