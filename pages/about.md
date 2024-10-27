@@ -1,14 +1,14 @@
 ---
 layout: page
 title: about
-tagline: 关于我 ~
+tagline: 关于这个主题的作者 ~
 sitetime: display
 permalink: /about.html
 ---
 
-## #作者
+## #主题作者
 
-你可以通过以下方式联系作者
+你可以通过以下方式联系主题作者
 
 QQ: 1316341442
 
