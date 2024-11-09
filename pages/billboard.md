@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 留言板
+title: BillBoard
 tagline: Biu~
 ---
 <div style="text-align:center">:Nothing Here...</div>
