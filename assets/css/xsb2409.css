@@ -15,7 +15,48 @@
   --themeDarkAlt: #106ebe;
   --themeDark: #005a9e;
   --themeDarker: #004578;
-  /* ... 其他颜色变量 ... */
+  --neutralQuaternaryAlt: #e1dfdd;
+  --neutralQuaternary: #d0d0d0;
+  --neutralTertiaryAlt: #c8c6c4;
+  --neutralTertiary: #a19f9d;
+  --neutralPrimary-trs: #32313044;
+  --white-trs: #ffffff44;
+  --black-trs: #00000044;
+  --neutralLighterAlt-trs: #faf9f844;
+  --neutralLighter-trs: #f3f2f144;
+  --neutralLight-trs: #edebe944;
+  --neutralDark-trs: #201f1e44;
+  --themeLighter-trs: #deecf944;
+  --themeLighterAlt-trs: #eff6fc44;
+  --themeLight-trs: #c7e0f444;
+  --themePrimary-trs: #0078d444;
+  --themeSecondary-trs: #2b88d844;
+  --themeTertiary-trs: #71afe544;
+  --themeDarkAlt-trs: #106ebe44;
+  --themeDark-trs: #005a9e44;
+  --themeDarker-trs: #00457844;
+  --neutralQuaternaryAlt-trs: #e1dfdd44;
+  --neutralQuaternary-trs: #d0d0d044;
+  --neutralTertiaryAlt-trs: #c8c6c444;
+  --neutralTertiary-trs: #a19f9d44;
+  --shared-red20: #a4262c;
+  --shared-redorange10: #da3b01;
+  --shared-bluemagenta30: #5c2e91;
+  --shared-purpledark: #32145a;
+  --shared-bluedark: #002050;
+  --shared-tealdark: #004b50;
+  --shared-bluemid: #00188f;
+  --shared-orangelight: #ea4300;
+  --shared-greendark: #004b1c;
+  --shared-red20-trs: #a4262c44;
+  --shared-redorange10-trs: #da3b0144;
+  --shared-bluemagenta30-trs: #5c2e9144;
+  --shared-purpledark-trs: #32145a44;
+  --shared-bluedark-trs: #00205044;
+  --shared-tealdark-trs: #004b5044;
+  --shared-bluemid-trs: #00188f44;
+  --shared-orangelight-trs: #ea430044;
+  --shared-greendark-trs: #004b1c44;
   --transparent: transparent;
   --transparent-trs: transparent;
   --corner-radius: 2px;
@@ -74,13 +115,18 @@
 /* 基础布局样式 */
 .pfLayout {
   display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .pfLayout.layout50 .pfLayoutColumn {
   width: 50%;
 }
 
-/* 盒子样式 */
+.margin-0 {
+  margin: 0 !important;
+}
+
 .pfBox {
   box-sizing: border-box;
   background-size: contain;
@@ -92,23 +138,30 @@
   background-position: 50%;
 }
 
-/* 内间距类 */
-.pfBox.padding-0 { padding: 0; }
-.pfBox.padding-10 { padding: 10px; }
-.pfBox.padding-15 { padding: 15px; }
+.pfBox.padding-0 {
+  padding: 0;
+}
 
-/* 高度类 */
-.pfBox.height-fill { height: 100%; }
-.height-auto { height: auto; }
-.height-75 { min-height: 75px !important; }
-.height-180 { min-height: 180px !important; }
-.height-600 { min-height: 600px !important; }
+.pfBox.padding-10 {
+  padding: 10px;
+}
 
-/* 文本对齐 */
-.text-align-default { text-align: inherit; }
-.text-align-center { text-align: center; }
+.pfBox.padding-15 {
+  padding: 15px;
+}
 
-/* 内容垂直和水平对齐 */
+.pfBox.height-fill {
+  height: 100%;
+}
+
+.text-align-default {
+  text-align: inherit;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
 .pfBox.content-vertical-align-center {
   justify-content: center;
   display: flex;
@@ -119,6 +172,235 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+}
+
+.height-auto {
+  height: auto;
+}
+
+.height-75 {
+  min-height: 75px !important;
+}
+
+.height-180 {
+  min-height: 180px !important;
+}
+
+.height-600 {
+  min-height: 600px !important;
+}
+
+.pfLayout {
+  display: flex;
+}
+
+.pfLayout.layout50 .pfLayoutColumn {
+  width: 50%;
+}
+
+@media (max-width: 480px) {
+  .pfLayout {
+    display: block;
+  }
+
+  .pfLayout>.pfLayoutColumn {
+    flex: none;
+    width: 100% !important;
+    display: block;
+  }
+
+  .pageWrapper {
+    display: block;
+  }
+}
+
+.pfBox.background-trans {
+  background-color: var(--transparent);
+}
+
+.pfBox.background-trans.boxdecoration-acrylic {
+  background-color: var(--transparent-trs);
+}
+
+.pfBox.background-themeSecondary {
+  background-color: var(--themeSecondary);
+}
+
+.pfBox.background-themeTertiary {
+  background-color: var(--themeTertiary);
+}
+
+.pfBox.background-themeTertiary.boxdecoration-acrylic {
+  background-color: var(--themeTertiary-trs);
+}
+
+.pfBox.background-themeLight {
+  background-color: var(--themeLight);
+}
+
+.pfBox.background-themeLight.boxdecoration-acrylic {
+  background-color: var(--themeLight-trs);
+}
+
+.pfBox.background-themeLighter {
+  background-color: var(--themeLighter);
+}
+
+.pfBox.background-themeLighterAlt {
+  background-color: var(--themeLighterAlt);
+}
+
+.text-white {
+  color: var(--white);
+}
+
+.text-neutralPrimary {
+  color: var(--neutralPrimary);
+}
+
+.pfHorizontalSeparator.border-tertiary .separatorLine {
+  background-color: #a19f9d;
+}
+
+:root {
+  --corner-radius: 2px;
+  --font-size: 14px;
+  --font-family: 'Open Sans', sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  color: var(--neutralPrimary);
+  background: var(--white);
+}
+
+a {
+  color: var(--themePrimary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--themeDark);
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+ul,
+li {
+  margin: 0;
+  padding-left: 20px;
+}
+
+ul li {
+  padding: 0;
+  margin: 0;
+  list-style: disc;
+}
+
+strong {
+  font-weight: 600;
+}
+
+p {
+  line-height: 150%;
+}
+
+.pageWrapper {
+  margin-top: 0;
+}
+
+.boxdecoration-none {
+  border-radius: none;
+  box-shadow: none;
+}
+
+.boxdecoration-acrylic {
+  -webkit-backdrop-filter: blur(10px) saturate(125%);
+  backdrop-filter: blur(10px) saturate(125%);
+}
+
+.pfButton {
+  font-weight: 600;
+  border-radius: var(--corner-radius);
+  text-transform: uppercase;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  padding: 6px 14px 8px 14px;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em !important;
+  }
+
+  h4 {
+    font-size: 1.4em !important;
+  }
+}
+
+/* 基础元素样式 */
+h1, h4, p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+a {
+  cursor: pointer;
+  color: var(--themePrimary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--themeDark);
+  text-decoration: underline;
+}
+
+article > :first-child {
+  margin-top: 0;
+}
+
+main > * {
+  margin-top: 15px;
+}
+
+.pageFull > main {
+  width: 100%;
+}
+
+.pageWrapper {
+  display: flex;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+footer {
+  margin-top: 25px;
+}
+
+.syncWithContentWidth {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* 堆叠面板 */
@@ -150,10 +432,7 @@
 }
 
 /* 倒计时样式 */
-.days,
-.hour,
-.minute,
-.second {
+.days, .hour, .minute, .second {
   display: inline-block;
   width: 80px;
   height: 80px;
@@ -161,59 +440,4 @@
   font-weight: 900;
   text-align: center;
   line-height: 80px;
-}
-
-/* 响应式适配 */
-@media (max-width: 480px) {
-  .pfLayout {
-    display: block;
-  }
-
-  .pfLayout>.pfLayoutColumn {
-    flex: none;
-    width: 100% !important;
-    display: block;
-  }
-
-  .pageWrapper {
-    display: block;
-  }
-}
-
-@media (max-width: 600px) {
-  h1 {
-    font-size: 2em !important;
-  }
-
-  h4 {
-    font-size: 1.4em !important;
-  }
-}
-
-/* 背景颜色类 */
-.pfBox.background-trans { background-color: var(--transparent); }
-.pfBox.background-themeSecondary { background-color: var(--themeSecondary); }
-.pfBox.background-themeTertiary { background-color: var(--themeTertiary); }
-.pfBox.background-themeLight { background-color: var(--themeLight); }
-.pfBox.background-themeLighter { background-color: var(--themeLighter); }
-.pfBox.background-themeLighterAlt { background-color: var(--themeLighterAlt); }
-
-/* 文本颜色类 */
-.text-white { color: var(--white); }
-.text-neutralPrimary { color: var(--neutralPrimary); }
-
-/* 装饰类 */
-.boxdecoration-none {
-  border-radius: none;
-  box-shadow: none;
-}
-
-.boxdecoration-acrylic {
-  -webkit-backdrop-filter: blur(10px) saturate(125%);
-  backdrop-filter: blur(10px) saturate(125%);
-}
-
-/* 边框类 */
-.pfHorizontalSeparator.border-tertiary .separatorLine {
-  background-color: #a19f9d;
 }
