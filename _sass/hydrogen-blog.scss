@@ -214,6 +214,10 @@ a {
     font-weight: normal;
     color: $section-headings-color;
   }
+  
+  h2 {
+    font-size: 1.5rem; // 增加h2标签的字体大小
+  }
 
   p {
     margin-bottom: 1em;
