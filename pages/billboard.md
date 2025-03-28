@@ -9,26 +9,22 @@ permalink: /billboard.html
 <p> BillBoard is under loosening construction. Please feel free to contact me if there are any ideas.</p><br>
 
 ### 每日一句
-<div class="pfCustomCode" style="font-size: 18pt">
+<div name="daily-sentence">
 <p id="content_span">英文句子:D获取中...</p>
 <p id="note_span">中文句子:D获取中...</p>
-<script>//友情提示这玩意需要加载jQuery，因为金山词霸返回的这玩意是跨域访问得到的，native需要jsonp或者fetchAPI顶级用法
-            //2024年1月更新，已接近支持原生运行了，采用了一点浏览器特性 ，使用fetchAP搞定了
-            (function () {
-              var script = document.createElement('script');
-              script.src = 'https://open.iciba.com/dsapi/?callback=handleData';
-              document.body.appendChild(script);
-            })();
-            function handleData(data) {
-              console.log(data);
-              if (typeof data !== "undefined" && typeof data.content === "string") {
-                document.getElementById("content_span").innerHTML = data.content;
-              }
-              if (typeof data !== "undefined" && typeof data.note === "string") {
-                document.getElementById("note_span").innerHTML = data.note;
-              }
-            }
+<script>
+  // 页面加载完成后调用每日一句函数
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof fetchDailySentence === 'function') {
+      fetchDailySentence();
+    } else {
+      console.error('fetchDailySentence function not found');
+    }
+  });
 </script>
 </div>
+
+<!-- 引入JS文件 -->
+<script src="{{ site.baseurl }}/assets/js/xsb2409.js"></script>
 
 [返回主页]({{ site.url }})
