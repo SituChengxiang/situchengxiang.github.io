@@ -16,13 +16,13 @@ Email: <a href="mailto:lk@atlinker.cn">lk@atlinker.cn</a>
 
 Github: [link9596](https://github.com/link9596)
 
-## #网站拥有者作者
+## #网站拥有者
 
 Emmm，我还没有想好写些啥好  
 
-浙江省双非学校在读学生，只想“survive the four years”，然后去个好大学。
+浙江省双非学校在读学生，目前只想“survive the four years”，然后去个好大学。
 
-高中时期的一些遗存：
+高中时期的一些遗存（貌似有BUG，等我想好了再修）：
 
 - [Yan群的URL](https://situchengxiang.github.io/pages/usefulurls.html)
 
@@ -31,10 +31,10 @@ Emmm，我还没有想好写些啥好
 
 ## #赞赏
 
-本主题使用免费，也是作者长期工作的结晶，如果你喜欢主题\~想支持作者，欢迎请我喝杯奶茶！~
+本主题使用免费，也是作者长期工作的结晶，如果你喜欢主题\~想支持作者，欢迎请TA喝杯奶茶！~
 
-<center>扫下方付款二维码即可向作者赞赏!</center>
+<center>扫下方付款二维码即可向主题作者赞赏!</center>
 
-![wechat](https://atlinker.cn/pay/wechat.png)
 
-![pay](https://atlinker.cn/pay/apay.png)
+<img src="https://atlinker.cn/pay/wechat.png" width="600px" />
+<img src="https://atlinker.cn/pay/apay.png" width="600px" />
