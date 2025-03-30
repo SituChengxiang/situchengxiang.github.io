@@ -29,7 +29,7 @@ Emmm，我还没有想好写些啥好
 
 - [XSB2409-效实24届白杨9班的班级主页](https://situchengxiang.github.io/projects/electron-classpage/xsb2409)
 
-- [T-Rex Runner游戏](https://situchengxiang.github.io/projects/kuan-frog-runner/)
+- [T-Rex Runner游戏](https://situchengxiang.github.io/projects/kuan-frog-runner/runner)
 
 ## #赞赏
 
