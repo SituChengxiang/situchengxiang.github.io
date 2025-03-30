@@ -25,43 +25,11 @@ Emmm，我还没有想好写些啥好
 
 高中时期的一些遗存（貌似有BUG，等我想好了再修）：
 
-- [Yan群的URL](https://situchengxiang.github.io/projects/usefulurls.html)
+- [Yan群的URL](https://situchengxiang.github.io/projects/usefulurls)
 
-- [XSB2409-效实24届白杨9班的班级主页](https://situchengxiang.github.io/projects/electron-classpage/xsb2409.html)
+- [XSB2409-效实24届白杨9班的班级主页](https://situchengxiang.github.io/projects/electron-classpage/xsb2409)
 
-↑ 这是我在高中时期为班级开发的一个网页项目，展示了班级的信息、活动和特色。
-
-### 功能
-
-- **首考高考倒计时**: 自动计算距离首考和高考的剩余时间
-- **Bing每日一图**: 用linker的接口获取Bing搜索每日更新的精美图片
-- **金山词霸每日一句**: 展示中英双语的每日励志句子
-- **生日提醒**: 自动检查并提醒班级同学的生日
-- **天气预报**: 集成第三方天气服务
-
-### 实现
-
-- 纯原生JavaScript实现，不依赖框架（为了能在电子班牌上流畅得加载）
-- 响应式设计，适配各种设备屏幕
-- 使用Fetch API进行数据获取
-- CSS变量实现主题样式统一管理
-
-### 思考
-
-这个项目是我最早期的Web开发作品，通过这个项目，我学习了：
-
-1. 原生JavaScript的DOM操作和事件处理
-2. 使用API获取第三方数据的方法
-3. 响应式设计的实现技巧
-4. 前端性能优化的基本原则
-
-虽然现在看来代码还有很多可以改进的地方，但它记录了我的成长历程，也是我珍贵的回忆。
-
-### 源代码
-
-项目源代码已开源在GitHub上：
-[GitHub仓库](https://github.com/SituChengxiang/electronic-class-page)
-
+- [T-Rex Runner游戏](https://situchengxiang.github.io/projects/kuan-frog-runner/)
 
 ## #赞赏
 

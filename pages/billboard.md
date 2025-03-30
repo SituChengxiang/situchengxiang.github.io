@@ -25,6 +25,6 @@ permalink: /billboard.html
 </div>
 
 <!-- 引入JS文件 -->
-<script src="{{ site.baseurl }}/assets/js/xsb2409.js"></script>
+<script src="{{ site.baseurl }}/projects/electron-classpage/js/api.js"></script>
 
 [返回主页]({{ site.url }})
