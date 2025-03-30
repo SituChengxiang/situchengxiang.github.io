@@ -45,7 +45,7 @@ body {
 a {
   color: $body-link-color;
   text-decoration: none;
-  color: #0d2b58;
+  color: #206793;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   
   &:hover {
@@ -53,7 +53,7 @@ a {
   }
 }
 
-.line a{text-decoration: none;position:relative;cursor:pointer;color:#0d2b58;display:inline-block;Z-index:1}.line a:before{content:"";position:absolute;width:0;right:0;bottom:0;height:2px;background:#90CAF9;-webkit-transition:width .3s ease;transition:width .3s ease}.line a:hover:before{width:100%;left:0;right:auto}
+.line a{text-decoration: none;position:relative;cursor:pointer;color:#206793;display:inline-block;Z-index:1}.line a:before{content:"";position:absolute;width:0;right:0;bottom:0;height:2px;background:#90CAF9;-webkit-transition:width .3s ease;transition:width .3s ease}.line a:hover:before{width:100%;left:0;right:auto}
 
 .btn {
   display: inline-block;
