@@ -23,7 +23,7 @@ function handleData(data) {
 // 生日列表
 function loadBirthdays() {
   //声明数组储存同学们的生日和日期
-  var names = ['Mike', 'Boppy', 'Carter', 'Bruce', 'Sam', 'Chris', 'Adam', 'Frank', '胡俊洋', '胡峻浩', 'Andy', 'Justin', '蒋京', 'Lan', 'Colin', 'Gino', 'Sabber', 'Tim', '毛毅涛', 'Alan', 'Jeb, Ray', 'Max', 'Glock', 'Tom', 'Shaper', 'Hawk', '徐翊博', 'Grant', 'Chuman'];
+  var names = ['Mike', 'Boppy', 'Carter', 'Bruce', 'Sam', 'Chris', 'Adam', 'Frank', 'Kevin', 'Lucifer', 'Andy', 'Justin', 'John', 'Lan', 'Colin', 'Gino', 'Sabber', 'Tim', 'Steve', 'Alan', 'Jeb, Ray', 'Max', 'Glock', 'Tom', 'Shaper', 'Hawk', 'Yage', 'Grant', 'Truman'];
   var birthdays = ['09.25', '12.21', '10.14', '11.19', '08.20', '04.26', '06.09', '12.02', '03.02', '01.28', '12.22', '01.08', '01.23', '03.11', '05.28', '08.11', '04.29', '10.06', '05.18', '09.24', '01.17', '01.11', '06.10', '06.03', '07.17', '10.27', '11.09', '10.29', '10.01']
   // 获取当前日期和月份
   var results = "",
