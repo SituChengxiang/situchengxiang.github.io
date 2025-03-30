@@ -9,7 +9,7 @@
   <meta name="description" content="B2409">
   <meta name="keywords" content="B2409" />
   <link rel="canonical" href="https://www.nbxiaoshi.net/bjzy_index.asp?BigClassID=471" />
-  <link rel="stylesheet" href="/assets/css/xsb2409.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="pageMedium">
   <header>
@@ -22,7 +22,7 @@
         class="pfBox bgImgFill background-trans height-600 content-vertical-align-center content-horizontal-align-center boxdecoration-acrylic"
         style="background-image: url(https://fly.atlinker.cn/api/bing/1920-cn.php); background-position: 50%">
         <div class="pfCustomCode">
-          <!-- 首考倒计时 -->
+          <!--首考倒计时↓，换了种写法，好看一点，可以本地运行，算法差别不大，D2401的也通用-->
           <div id="timer" style="font-size: 18pt; color: #d8d8d8">
             <span class="timertitle">距离2024年1月6日首考还有：</span>
             <br />
@@ -47,15 +47,6 @@
         <div id="introduce" align="center" style="font-size: 12pt">
           <p>世界那么大，我要去看看</p>
         </div>
-        <script>
-          fetch('https://fly.atlinker.cn/api/bing/cn.php?q=copyright')
-            .then(response => response.text())
-            .then(data => {
-              const introduce = document.querySelector('#introduce');
-              introduce.innerText = '今天的 Bing 每日一图：' + data
-            })
-            .catch(console.error);
-        </script>
       </div>
       <!--金山词霸每日一句↓-->
       <!--金山官方接口返回的数据会有浏览器跨域访问的问题，这就让fetchAPI有点麻烦，jsonp之类的我暂时不会用，所以就先用jQuery的.ajax方法了-->
@@ -65,58 +56,15 @@
         <div class="pfCustomCode" style="font-size: 18pt">
           <p id="content_span">英文句子:D获取中...</p>
           <p id="note_span">中文句子:D获取中...</p>
-          <script>//友情提示这玩意需要加载jQuery，因为金山词霸返回的这玩意是跨域访问得到的，native需要jsonp或者fetchAPI顶级用法
-            //2024年1月更新，已接近支持原生运行了，采用了一点浏览器特性 ，使用fetchAP搞定了
-            (function () {
-              var script = document.createElement('script');
-              script.src = 'https://open.iciba.com/dsapi/?callback=handleData';
-              document.body.appendChild(script);
-            })();
-            function handleData(data) {
-              console.log(data);
-              if (typeof data !== "undefined" && typeof data.content === "string") {
-                document.getElementById("content_span").innerHTML = data.content;
-              }
-              if (typeof data !== "undefined" && typeof data.note === "string") {
-                document.getElementById("note_span").innerHTML = data.note;
-              }
-            }
-          </script>
         </div>
       </div>
       <!--生日列表↓-->
       <div
         class="pfBox boxdecoration-acrylic bgImgFill content-horizontal-align-center content-vertical-align-center padding-15 background-themeLight">
-        <div class="pfCustomCode">
+        <div class="pfCustomCode"></div>
           <div id="birthday-div" class="div2" align="center" style="font-size: 18pt">
             <p>正在载入同学们的生日...</p>
           </div>
-          <script> //在页面加载时执行代码       
-            window.onload = function () {//声明数组储存同学们的生日和日期
-              var names = ['陈俊义', '陈星宇', '陈泽玮', '陈作亚', '单梓航', '丁意伦', '董晨烨', '傅天祈', '胡俊洋', '胡峻浩', '贾安迪', '姜仁杰', '蒋京', '李响', '林洁', '刘宇杰', '刘浙楠', '柳岷昊', '毛毅涛', '阮俊翔', '沈宽、徐睿', '时习之', '孙嘉玥', '王宇轩', '吴明锐', '徐浩', '徐翊博', '张顾宇晨', '朱怡帆'];
-              var birthdays = ['09.25', '12.21', '10.14', '11.19', '08.20', '04.26', '06.09', '12.02', '03.02', '01.28', '12.22', '01.08', '01.23', '03.11', '05.28', '08.11', '04.29', '10.06', '05.18', '09.24', '01.17', '01.11', '06.10', '06.03', '07.17', '10.27', '11.09', '10.29', '10.01']
-              // 获取当前日期和月份
-              var results = "",
-                  flag = false;
-              for (var i = 0; i < names.length; i++) {
-                  var dt = "";
-                  if (new Date().getMonth() > 8) dt = (new Date().getMonth() + 1) + ".";
-                  else dt = "0" + (new Date().getMonth() + 1) + ".";
-                  if (new Date().getDate() > 9) dt = dt + new Date().getDate();
-                  else dt = dt + "0" + new Date().getDate();
-                  if (birthdays[i] == dt) {
-                      results = results + names[i] + ",";
-                      flag = true;
-                  }
-              }
-              if (flag) {
-                  results = results.substring(0, results.length - 1) + " " + "生日快乐🎂🎂！！！";
-              } else {
-                  results = "今天班里没人生日呐";
-              }
-              document.getElementById("birthday-div").innerHTML = (results);
-          };
-          </script>
         </div>
       </div>
       <!--此处应有分割线-->
@@ -125,43 +73,6 @@
         a='{"t":"responsive","lang":"zh","sl_lpl":1,"ids":["wl3283"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","sl_tof":"5"}'>
         More forecasts: <a href="https://oneweather.org/de/deutschland/30_tage/" id="ww_af398e243dd9a_u"
           target="_blank">wettervorhersage 4 wochen</a></div>
-      <script async>
-        function requestGet(url, callback, id, gen) {
-          var request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP"); request.onreadystatechange = function () {
-            if (request.readyState === XMLHttpRequest.DONE && request.status === 200) { callback(id, request.responseText, gen) }
-          }; request.open('GET', url); request.send()
-        }
-        function requestPost(url, callback, params, id) {
-          var request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP"); request.onreadystatechange = function () {
-            if (request.readyState === XMLHttpRequest.DONE && request.status === 200) { callback(request.responseText, id) }
-          }; request.open('POST', url, !0); request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); request.send(params)
-        }
-        function getDataFromApi(id, i, gen) {
-          var v = document.getElementById(id).getAttribute("v"); var a = document.getElementById(id).getAttribute("a"); var l = document.getElementById(id).getAttribute("loc"); var u = document.getElementById(id + '_u').getAttribute("href") + '|||' + document.getElementById(id + '_u').innerHTML; if (gen == 1) { var ub = '' }
-          else { var ub = document.getElementById(id).innerHTML }
-          var i = i; var g = gen; var params = 'v=' + v + '&a=' + a + '&l=' + l + '&u=' + u + '&ub=' + ub + '&i=' + i + '&g=' + g + '&id=' + id; requestPost('https://app2.weatherwidget.org/data/', updateOnPage, params, id)
-        }
-        function collectData(id, gen) {
-          if (document.getElementById(id).getAttribute("loc") === 'auto') { requestGet('https://ip.weatherwidget.org/', getDataFromApi, id, gen) }
-          else { getDataFromApi(id, !1, gen) }
-        }
-        function updateOnPage(data, id) {
-          if (typeof JSON.parse === "undefined") { data = JSON.decode(data) }
-          else { data = JSON.parse(data) }
-          if (data.hasOwnProperty("a")) {
-            if (data.a.hasOwnProperty("html")) { document.getElementById(id).innerHTML = data.a.html }
-            if (data.a.hasOwnProperty("style")) { document.getElementById(id).style.cssText = data.a.style }
-            if (data.a.hasOwnProperty("jsCode")) { var script = document.createElement('script'); script.type = "text/javascript"; script.async = !1; script.text = data.a.jsCode; document.getElementsByTagName('head')[0].appendChild(script) }
-            if (data.a.hasOwnProperty("ub")) { document.getElementById(id + '_info_box_inner').innerHTML = data.a.ub; updateInfobox(id, data.a.ub); loadingToggle(id, 2) }
-          }
-          else if (data.hasOwnProperty("error_code")) { document.getElementById(id).innerHTML = ''; console.log('weatherwidget.org / Error: ' + data.error_msg + ' (Error code ' + data.error_code + ')') }
-        }
-        function updateWidget(id, gen) {
-          if (gen === 1) { loadingToggle(id, 1) }
-          collectData(id, gen)
-        }
-        updateWidget('ww_af398e243dd9a', 0);
-      </script>
       <!--鸡汤文学↓-->
       <div class="pfHorizontalSeparator spaceLineHeight-1 border-tertiary spaceHeight-30">
         <div class="separatorLine"></div>
@@ -179,7 +90,7 @@
       <div class="pfLayout layout50">
         <div class="pfLayoutColumn">
           <div
-            class="pfBox height-fill content-vertical-align-center content-horizontal-align-center boxdecoration-none background-themeLight"></div>
+            class="pfBox height-fill content-vertical-align-center content-horizontal-align-center boxdecoration-none background-themeLight">
             <img src="http://www.nbxiaoshi.net/WEB_Files/uploadfile/202207/20220726175154222_s.png" />
           </div>
         </div>
@@ -206,7 +117,7 @@
         </div>
       </div>
       <div class="pfLayout layout50">
-        <div class="pfLayoutColumn"></div>
+        <div class="pfLayoutColumn">
           <div
             class="pfBox height-fill content-vertical-align-center content-horizontal-align-center boxdecoration-none background-themeLight">
             <div class="pfStackPanel stack-vertical space-20 content-horizontal-align-center">
@@ -282,11 +193,11 @@
         </div>
       </div>
       <!--最下面的正确用法-->
-      <footer></footer>
+      <footer>
         <div class="pfBox background-themeLighterAlt padding-0 content-vertical-align-center height-180">
           <div class="pfBox syncWithContentWidth">
             <div class="pfLayout layout50">
-              <div class="pfLayoutColumn"></div>
+              <div class="pfLayoutColumn">
                 <div class="pfCustomCode">
                   <p>本页API：</p>
                   <a href="https://atlinker.cn/2019/07/28/bing.htmll">Link</a>（Bing每日一图和介绍）<br>
@@ -294,7 +205,7 @@
                   <a href="https://oneweather.org/">OneWeather</a>（天气预报）<br>
                   <p>开源地址：<a href="https://github.com/SituChengxiang/electronic-class-page">Github</a></p>
                   当前主页版本：
-                  <a href="https://situchengxiang.github.io/FireworksCompany.girhub.io/kuan-frog-runner/runner.html"></a>
+                  <a href="https://situchengxiang.github.io/FireworksCompany.girhub.io/kuan-frog-runner/runner.html">
                     4.1.10
                   </a>
                   </p>
@@ -312,7 +223,12 @@
           </div>
         </div>
       </footer>
-      <script src="/assets/js/xsb2409.js"></script>
     </main>
   </div>
+  
+  <!-- 引入外部JavaScript文件 -->
+  <script src="js/countdown.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/api.js"></script>
+</body>
 </html>
