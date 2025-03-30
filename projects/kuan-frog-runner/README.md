@@ -1,3 +1,11 @@
+---
+layout: none
+title: null
+sitemap: false
+navigation: false
+permalink: /projects/kuan-frog-runner/README.html
+---
+
 ## t-rex-runner
 
 the trex runner game extracted from chrome offline err page.

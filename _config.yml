@@ -18,13 +18,14 @@ paginate: 8 #同时显示的最大文章数，超过自动分页
 paginate_path: "page:num"
 
 background: https://api.dujin.org/bing/1920.php
-theme_color: 00000099
+theme_color: 00426499
 
 header_pages:
   - pages/about.md
-  - pages/tags.md
-  - pages/link.md
   - pages/billboard.md
+  - pages/hydrogen.md
+  - pages/link.md
+  - pages/tags.md
 
 # hydrogen-blog date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
