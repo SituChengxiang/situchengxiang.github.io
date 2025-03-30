@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Golang-QA项目插件开发小记3-解耦
-tags: code
+tags: code Go
 ---
 
 又是等DeepSeek等到不耐烦然后去问 Copilot。好在 Copilot 增加了 DeepThink 之后可靠性貌似起来了。

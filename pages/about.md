@@ -25,9 +25,9 @@ Emmm，我还没有想好写些啥好
 
 高中时期的一些遗存（貌似有BUG，等我想好了再修）：
 
-- [Yan群的URL](https://situchengxiang.github.io/_projects/usefulurls.html)
+- [Yan群的URL](https://situchengxiang.github.io/projects/usefulurls.html)
 
-- [XSB2409-效实24届白杨9班的班级主页](https://situchengxiang.github.io/_projects/electron-classpage/xsb2409.html)
+- [XSB2409-效实24届白杨9班的班级主页](https://situchengxiang.github.io/projects/electron-classpage/xsb2409.html)
 
 ↑ 这是我在高中时期为班级开发的一个网页项目，展示了班级的信息、活动和特色。
 
