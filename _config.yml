@@ -20,6 +20,12 @@ paginate_path: "page:num"
 background: https://api.dujin.org/bing/1920.php
 theme_color: 00000099
 
+header_pages:
+  - pages/about.md
+  - pages/tags.md
+  - pages/link.md
+  - pages/billboard.md
+
 # hydrogen-blog date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 hydrogen-blog:

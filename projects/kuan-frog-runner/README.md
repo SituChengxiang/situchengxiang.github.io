@@ -5,7 +5,7 @@ the trex runner game extracted from chrome offline err page.
 - 这是 B2409 电教委员自己瞎改 access 整出来的花样，灵感来源包括但不限于班上的梗和对 Minecraft 的热爱
 - 尤其是小精灵 Colin ，宁波市教研室我真的谢谢你，当然还有班上的 Colin ，真的好可爱😊
 
-[点击开玩我的fork：](https://situchengxiang.github.io/kuan-frog-runner/runner.html)
+[点击开玩我的fork：](https://situchengxiang.github.io/projects/kuan-frog-runner/runner)
 
 see the [source](https://cs.chromium.org/chromium/src/components/neterror/resources/offline.js?q=t-rex+package:%5Echromium$&dr=C&l=7) from chromium
 
