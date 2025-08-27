@@ -13,6 +13,9 @@
 
 ~~点点~~Star~~来一个好吗！秋梨膏！！~~
 
+> [!TIP] 
+> dev分支部署在CloudFlare上，正在迁移到react
+
 # #快速开始
 
 ![hydrogen](/theme/a-h.png)
