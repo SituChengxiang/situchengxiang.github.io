@@ -1,0 +1,115 @@
+.tags-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.tags-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.tags-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.tags-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.back-to-tags {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #169044;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.back-to-tags:hover {
+  color: #0d5f2f;
+  text-decoration: underline;
+}
+
+.tags-list {
+  display: grid;
+  gap: 2rem;
+}
+
+.tag-section {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+}
+
+.tag-title {
+  font-size: 1.5rem;
+  color: #169044;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.tag-info {
+  margin-bottom: 1rem;
+}
+
+.tag-link {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.tag-link:hover {
+  color: #169044;
+  text-decoration: underline;
+}
+
+.tagged-posts {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.tagged-post {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+}
+
+.tagged-post:last-child {
+  border-bottom: none;
+}
+
+.tagged-post .post-title {
+  margin-bottom: 0.5rem;
+}
+
+.tagged-post .post-title a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.tagged-post .post-title a:hover {
+  color: #169044;
+  text-decoration: underline;
+}
+
+.tagged-post .post-meta {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .tags-page {
+    padding: 1rem;
+  }
+  
+  .tags-header h1 {
+    font-size: 2rem;
+  }
+}
