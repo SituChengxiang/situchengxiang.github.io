@@ -1,0 +1,112 @@
+{
+  "timestamp": "2026-02-13T07:48:54.405Z",
+  "totalFiles": 17,
+  "validFiles": 17,
+  "invalidFiles": 0,
+  "totalErrors": 0,
+  "totalWarnings": 0,
+  "results": [
+    {
+      "file": "astro-docs.yaml",
+      "isValid": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "file": "jessiexichen.yaml",
+      "isValid": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "file": "keigo.yaml",
+      "isValid": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "file": "link.yaml",
+      "isValid": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "file": "lxchapu.yaml",
+      "isValid": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "file": "minhan.yaml",
+      "isValid": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "file": "sugarmgp.yaml",
+      "isValid": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "file": "小付同学.yaml",
+      "isValid": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "file": "日升.yaml",
+      "isValid": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "file": "星起（star-dawn-soso）.yaml",
+      "isValid": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "file": "望舒（phlin）.yaml",
+      "isValid": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "file": "派大星的石头屋.yaml",
+      "isValid": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "file": "消失在彩霞里.yaml",
+      "isValid": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "file": "离谱.yaml",
+      "isValid": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "file": "竹林里有冰.yaml",
+      "isValid": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "file": "这个位置是留给你的！.yaml",
+      "isValid": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "file": "青鸟のblog.yaml",
+      "isValid": true,
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}
