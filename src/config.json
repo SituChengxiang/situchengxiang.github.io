@@ -3,7 +3,7 @@
     "url": "https://situchengxiang.github.io",
     "title": "SituChengxiang",
     "description": "司徒和丞相 - 某大学生的blog",
-    "keywords": "Gyoza,blog,Astro,theme,lxchapu,博客主题",
+    "keywords": "学业，生活，阅读，记录，科学",
     "lang": "zh-CN",
     "favicon": "/favicon.ico",
     "appleTouchIcon": "/apple-touch-icon.png"
@@ -11,12 +11,12 @@
   "author": {
     "name": "SituChengxiang",
     "avatar": "https://s41.ax1x.com/2026/02/13/pZqMzSx.png",
-    "twitterId":""
+    "twitterId": ""
   },
   "hero": {
-    "name": "SituChengxiang",
-    "bio": "A static blog template build with Astro and React.",
-    "description": "May aspiration and courage never fade.",
+    "name": "司徒和丞相",
+    "bio": "某普通大学生的个人博客",
+    "description": "May aspiration and courage never fade. 愿热爱与勇气永不褪色。",
     "socials": [
       {
         "name": "Github",
@@ -36,12 +36,9 @@
   "color": {
     "accent": [
       { "light": "#0396FF", "dark": "#ABDCFF" },
-      { "light": "#fb7287", "dark": "#99D8CF" },
-      { "light": "#F072B6", "dark": "#FFF886" },
-      { "light": "#9F44D3", "dark": "#E2B0FF" },
-      { "light": "#FF6666", "dark": "#A1CCD1" },
-      { "light": "#F6416C", "dark": "#838BC6" },
+      { "light": "#0975C8", "dark": "#BBE0FC" },
       { "light": "#32CCBC", "dark": "#90F7EC" },
+      { "light": "#695B0C", "dark": "#F3E596" },
       { "light": "#33A6B8", "dark": "#79F1A4" }
     ],
     "bg": {
@@ -93,10 +90,10 @@
     "serverURL": ""
   },
   "sponsor": {
-    "wechat": "https://object.lxchapu.com/bed%2F2024%2F0507_6e3e8f73df2d4e6d.webp"
+    "wechat": ""
   },
   "analytics": {
-    "enable": false,
+    "enable": true,
     "google": {
       "measurementId": ""
     },
@@ -105,7 +102,7 @@
       "websiteId": ""
     },
     "microsoftClarity": {
-      "projectId": ""
+      "projectId": "vgsk11imug"
     }
   }
 }

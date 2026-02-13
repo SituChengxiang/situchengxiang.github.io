@@ -16,7 +16,7 @@ import { Comments } from '@/components/comment'
 export const getStaticPaths = (async () => {
   const specList = await getCollection('spec')
 
-  return specList.map((md) => ({
+  return specList.map((md: { slug: any }) => ({
     params: { spec: md.slug },
     props: {
       md,
