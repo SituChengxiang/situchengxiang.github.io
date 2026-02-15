@@ -1,7 +1,6 @@
 ---
 import { hero, author } from "@/config.json";
 import { SocialList } from "./SocialList";
-import Highlight from "@/components/Highlight.astro";
 ---
 
 <div
@@ -13,21 +12,21 @@ import Highlight from "@/components/Highlight.astro";
       style="background-image: url('https://bing.biturl.top/?resolution=UHD&format=image&index=0&mkt=zh-CN');"
       id="bing-wallpaper"
     >
-      <div class="absolute inset-0 bg-black/60 dark:bg-black/70"></div>
+      <div class="absolute inset-0 bg-black/40 dark:bg-black/40"></div>
     </div>
   </div>
   <div
     class="relative max-w-[1300px] mx-auto h-full px-4 grid lg:grid-cols-2 items-center justify-items-center"
   >
     <div class="mt-[120px] lg:mt-0 max-w-[590px]">
-      <h1 class="text-3xl text-center lg:text-left text-balance">
-        Hi there, I'm <Highlight class="font-bold">{hero.name}</Highlight>👋<br
+      <h1 class="text-3xl text-center lg:text-left text-balance text-white">
+        Hi there, I'm {hero.name} 👋<br
         />{hero.bio}
       </h1>
-      <div class="text-base text-secondary mt-3 text-center lg:text-left">
+      <div class="text-base text-white/80 mt-3 text-center lg:text-left">
         {hero.description}
       </div>
-      <SocialList className="mt-[60px]" client:load />
+      <SocialList className="mt-[60px]" client:load/>
     </div>
     <div class="mt-20 lg:mt-0">
       <div
@@ -45,7 +44,7 @@ import Highlight from "@/components/Highlight.astro";
     <div
       class="mt-10 lg:mt-0 lg:absolute inset-x-0 bottom-0 flex flex-col items-center"
     >
-      <p class="text-text-base text-center text-balance text-secondary">
+      <p class="text-base text-center text-balance text-white/80">
         {hero.yiyan}
       </p>
       <div class="mt-7 text-xl animate-bounce">

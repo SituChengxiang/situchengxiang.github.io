@@ -15,7 +15,7 @@
   },
   "hero": {
     "name": "司徒和丞相",
-    "bio": "某普通大学生的个人博客",
+    "bio": "这是某普通大学生的个人博客",
     "description": "May aspiration and courage never fade. 愿热爱与勇气永不褪色。",
     "socials": [
       {
@@ -28,7 +28,7 @@
         "name": "Email",
         "icon": "icon-mail",
         "url": "mailto:kuan896048176@outlook.com",
-        "color": "rgb(212, 70, 56)"
+        "color": "rgb(17, 57, 90)"
       }
     ],
     "yiyan": "当第一颗卫星飞向大气层外，我们便以为自己终有一日会征服宇宙。"

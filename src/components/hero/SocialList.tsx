@@ -36,10 +36,10 @@ export function SocialList({ className }: { className?: string }) {
             rel="noopener noreferrer"
           >
             <span
-              className="absolute inset-0 -z-1 rounded-full group-hover:scale-105 transition"
-              style={{ backgroundColor: social.color }}
+              className="absolute inset-0 -z rounded-full group-hover:scale-105 transition"
+              style={{ backgroundColor: social.color, opacity: 0.3}}
             ></span>
-            <i className={clsx('iconfont', social.icon)} />
+            <span className='relative inset-0 -z+1 items-center'><i className={clsx('iconfont', social.icon)}/></span>
           </a>
         </motion.li>
       ))}
