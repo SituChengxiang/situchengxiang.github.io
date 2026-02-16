@@ -31,13 +31,7 @@ export function TimelineProgress() {
   return (
     <>
       <p className="mt-4">
-        今天是 {currentYear} 年的第 <CountUp to={dayOfYear} decimals={0} /> 天
-      </p>
-      <p className="mt-4">
-        今年已过 <CountUp to={percentOfYear} decimals={5} />%
-      </p>
-      <p className="mt-4">
-        今天已过 <CountUp to={percentOfToday} decimals={5} />%
+        今天是 {currentYear} 年的第 <CountUp to={dayOfYear} decimals={0} /> 天，今年已过 <CountUp to={percentOfYear} decimals={0} />% ，今天已过 <CountUp to={percentOfToday} decimals={3} />%
       </p>
     </>
   )

@@ -1,0 +1,51 @@
+---
+interface Props {
+  title: string
+  description?: string
+  category?: string
+  tags?: string[]
+  imageUrl?: string
+}
+
+const { title, description, category, tags, imageUrl } = Astro.props
+
+const defaultImageUrl = imageUrl || 'https://bing.biturl.top/?resolution=UHD&format=image&index=0&mkt=zh-CN'
+---
+
+<div class="relative w-full h-[480px]">
+  <!-- 固定背景图片 -->
+  <div class="absolute inset-0 z-0">
+    <div
+      class="w-full h-full bg-cover bg-center bg-fixed"
+      style={`background-image: url('${defaultImageUrl}');`}
+    />
+    <div class="absolute inset-0 bg-black/30 dark:bg-black/40"></div>
+  </div>
+
+  <!-- 内容区域，居中放置 -->
+  <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
+    <div class="max-w-[800px] mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-xl">{title}</h1>
+
+      {description && (
+        <p class="text-xl text-white/90 mb-6 drop-shadow-md">{description}</p>
+      )}
+
+      <!-- 类别和标签 - 功能页可以保留完整显示 -->
+      {(category || tags?.length) && (
+        <div class="flex flex-wrap justify-center gap-3">
+          {category && (
+            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium">
+              {category}
+            </span>
+          )}
+          {tags?.map(tag => (
+            <span class="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+</div>

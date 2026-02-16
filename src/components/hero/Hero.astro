@@ -8,17 +8,17 @@ import { SocialList } from "./SocialList";
 >
   <div class="absolute inset-0 z-0">
     <div
-      class="w-full h-full bg-cover bg-center bg-no-repeat"
+      class="w-full h-full bg-cover bg-center bg-no-repeat bg-fixed"
       style="background-image: url('https://bing.biturl.top/?resolution=UHD&format=image&index=0&mkt=zh-CN');"
       id="bing-wallpaper"
     >
-      <div class="absolute inset-0 bg-black/40 dark:bg-black/40"></div>
+      <div class="absolute inset-0 bg-black/30 dark:bg-black/40"></div>
     </div>
   </div>
   <div
-    class="relative max-w-[1300px] mx-auto h-full px-4 grid lg:grid-cols-2 items-center justify-items-center"
+    class="relative max-w-[1200px] mx-auto h-full px-4 md:px-8 grid lg:grid-cols-[auto_300px] gap-10 items-center"
   >
-    <div class="mt-[120px] lg:mt-0 max-w-[590px]">
+    <div class="mt-[120px] lg:mt-0 w-full max-w-[590px]">
       <h1 class="text-3xl text-center lg:text-left text-balance text-white">
         Hi there, I'm {hero.name} 👋<br
         />{hero.bio}
@@ -28,7 +28,7 @@ import { SocialList } from "./SocialList";
       </div>
       <SocialList className="mt-[60px]" client:load/>
     </div>
-    <div class="mt-20 lg:mt-0">
+    <div class="mt-20 lg:mt-0 justify-self-center lg:justify-self-start">
       <div
         class="size-[200px] lg:size-[300px] rounded-full overflow-hidden border border-primary bg-zinc-100 dark:bg-zinc-800"
       >
@@ -44,9 +44,11 @@ import { SocialList } from "./SocialList";
     <div
       class="mt-10 lg:mt-0 lg:absolute inset-x-0 bottom-0 flex flex-col items-center"
     >
-      <p class="text-base text-center text-balance text-white/80">
-        {hero.yiyan}
+      <p class="text-base text-center text-balance text-white/80" id="hitokoto">
+        :D 获取中...
       </p>
+      <!-- 本例不能添加链接内容，放在此处只是因为此接口比较方便，也许能够解决大部分的需求-->
+      <script src="https://v1.hitokoto.cn/?c=d&c=h&c=i&c=i&encode=js&select=%23hitokoto" defer is:inline></script>
       <div class="mt-7 text-xl animate-bounce">
         <i class="iconfont icon-down"></i>
       </div>

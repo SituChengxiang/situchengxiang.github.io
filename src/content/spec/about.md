@@ -1,10 +1,15 @@
 ---
 title: 自述
-description: 这是一份站长的自述报告，请查收。
+description: 关于作者和这个主题
 comments: false
 ---
 
-## 关于 Gyoza 和其作者
+## 关于作者
+
+我是司徒和丞相，浙江省双非学校在读学生，目前只想”survive the four years”，然后去个好大学。  
+应用物理专业学生会牛马，偶尔折腾一点科学计算。
+
+## 关于 Gyoza 和其作者 lxchapu
 
 Gyoza 是一个使用 Astro 和 React 开发的博客主题。Gyoza 借鉴了 [Shiro](https://github.com/innei/Shiro) 和一些网站的设计。
 
@@ -14,11 +19,8 @@ Gyoza 的核心理念是简洁，快速，可爱。
 - 可以前往 [Gyoza 使用指南](https://gyoza.lxchapu.com/posts/guide) 了解 Gyoza 的使用方法
 
 Gyoza 是开源的，如果你对这个项目感兴趣，欢迎前往 Gyoza 的 [Github 仓库](https://github.com/lxchapu/astro-gyoza) 来提 Issue 或者 PR。
-欢迎访问我的个人网站 [www.lxchapu.com](https://www.lxchapu.com)，了解关于我更多的信息。
+欢迎访问lxchapu的个人网站 [www.lxchapu.com](https://www.lxchapu.com)，了解关于我更多的信息。
 
-## 关于作者
-
-我是司徒和丞相，浙江省双非学校在读学生，目前只想”survive the four years”，然后去个好大学。
 
 ## 致谢
 

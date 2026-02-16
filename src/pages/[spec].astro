@@ -32,7 +32,7 @@ const { md } = Astro.props
 
 const { headings, Content } = await md.render()
 
-const isPageLayout = ['friends', 'projects'].includes(md.slug)
+const isPageLayout = ['friends', 'projects', 'about'].includes(md.slug)
 const isMdContentEmpty = !md.body || md.body.trim().length === 0
 ---
 
@@ -40,12 +40,6 @@ const isMdContentEmpty = !md.body || md.body.trim().length === 0
   isPageLayout ? (
     <PageLayout title={md.data.title} description={md.data.description}>
       <div class="max-w-[800px] mx-auto px-4 py-16 space-y-8" data-pagefind-body>
-        <header class="space-y-4">
-          <h1 class="text-4xl font-bold">
-            <Highlight>{md.data.title}</Highlight>
-          </h1>
-          <p>{md.data.description}</p>
-        </header>
         {md.slug === 'friends' && <FriendList />}
         {md.slug === 'projects' && <ProjectList />}
         {!isMdContentEmpty && (
@@ -65,7 +59,7 @@ const isMdContentEmpty = !md.body || md.body.trim().length === 0
       mdSlug={md.slug}
     >
       <div
-        class="max-w-[1100px] mx-auto px-4 md:px-8 py-16 grid lg:grid-cols-[auto_260px] gap-8"
+        class="max-w-[1200px] mx-auto px-4 md:px-8 py-16 grid lg:grid-cols-[auto_260px] gap-8"
         data-pagefind-body
       >
         <div>

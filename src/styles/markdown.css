@@ -7,7 +7,7 @@
 }
 
 .markdown p {
-  @apply mb-5;
+  @apply mb-5 leading-relaxed tracking-wide;
 }
 
 .markdown h1 {

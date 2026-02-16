@@ -1,9 +1,9 @@
 ---
 import Layout from './Layout.astro'
-import { HeadGradient } from '@/components/head-gradient'
 import Footer from '@/components/footer/Footer.astro'
 import { Header } from '@/components/header/Header'
 import { Provider } from '@/components/provider/Provider'
+import ReadPageHeader from '@/components/ReadPageHeader.astro'
 import 'katex/dist/katex.min.css'
 
 interface Props {
@@ -13,9 +13,15 @@ interface Props {
   mdTitle: string
   mdDescription: string
   mdSlug: string
+  category?: string
+  tags?: string[]
+  date?: string
+  lastMod?: string
+  words?: number
+  readingMinutes?: number
 }
 
-const { title, description, image, mdTitle, mdDescription, mdSlug } = Astro.props
+const { title, description, image, mdTitle, mdDescription, mdSlug, category, tags, date, lastMod, words, readingMinutes } = Astro.props
 ---
 
 <Layout title={title} description={description} image={image}>
@@ -28,8 +34,18 @@ const { title, description, image, mdTitle, mdDescription, mdSlug } = Astro.prop
   />
 
   <Header client:only="react" />
-  <main class="relative z-1 pt-16 min-h-main bg-primary">
-    <HeadGradient client:idle />
+  <main class="relative z-1 bg-primary">
+    <ReadPageHeader
+      title={mdTitle}
+      description={mdDescription}
+      category={category}
+      tags={tags}
+      imageUrl={image}
+      date={date}
+      lastMod={lastMod}
+      words={words}
+      readingMinutes={readingMinutes}
+    />
     <div class="swup-transition-fade">
       <slot />
     </div>
