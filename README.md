@@ -4,8 +4,8 @@
 
 Gyoza is a static blog template built with Astro and React.
 
-![astro version](https://img.shields.io/badge/astro-4.6-red)
-![node version](https://img.shields.io/badge/node-18.18-green)
+![astro version](https://img.shields.io/badge/astro-5.17.2-red)
+![node version](https://img.shields.io/badge/node-25.6.1-green)
 
 Demo Site:
 
