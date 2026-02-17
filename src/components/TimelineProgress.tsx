@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { animate } from 'framer-motion'
 import { getDaysInYear, getDiffInDays, getStartOfDay, getStartOfYear } from '@/utils/date'
 
-export function TimelineProgress() {
+export function TimelineProgress({ totalPosts }: { totalPosts: number }) {
   const [currentYear, setCurrentYear] = useState(0)
   const [dayOfYear, setDayOfYear] = useState(0)
   const [percentOfYear, setPercentOfYear] = useState(0)
@@ -31,7 +31,10 @@ export function TimelineProgress() {
   return (
     <>
       <p className="mt-4">
-        今天是 {currentYear} 年的第 <CountUp to={dayOfYear} decimals={0} /> 天，今年已过 <CountUp to={percentOfYear} decimals={0} />% ，今天已过 <CountUp to={percentOfToday} decimals={3} />%
+        今天是 {currentYear} 年的第 <CountUp to={dayOfYear} decimals={0} /> 天，今年已过 <CountUp to={percentOfYear} decimals={0} />%，今天已过 <CountUp to={percentOfToday} decimals={3} />%
+      </p><br></br>
+      <p className="text-text-base text-secondary">
+        目前共有 <span className="font-medium">{totalPosts}</span> 篇文章
       </p>
     </>
   )

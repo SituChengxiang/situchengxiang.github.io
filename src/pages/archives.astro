@@ -9,7 +9,7 @@ const oldestPosts = await getOldestPosts()
 
 <PageLayout title="归档" description="按照时间顺序排列一下文章">
   <div class="max-w-[800px] mx-auto px-4 py-16 space-y-8" data-pagefind-body>
-    <TimelineProgress client:load />
+    <TimelineProgress client:load totalPosts={oldestPosts.length} />
     <Timeline posts={oldestPosts} />
   </div>
 </PageLayout>
