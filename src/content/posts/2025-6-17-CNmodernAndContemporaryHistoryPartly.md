@@ -1,6 +1,6 @@
 ---
 title: 2023版近现代史纲要-2025修订复习资料
-tags: [School]
+tags: [Course]
 date: 2025-06-17
 ---
 

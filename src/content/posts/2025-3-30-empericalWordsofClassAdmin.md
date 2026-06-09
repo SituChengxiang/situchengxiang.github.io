@@ -1,5 +1,5 @@
 ---
-title: 一个资深班委的一些话
+title: 班干部的这些年
 tags: [campus, life]
 date: 2025-03-30
 ---
