@@ -35,8 +35,11 @@ const minutes = Math.ceil(remarkPluginFrontmatter.readingMinutes)
 <a
   class="fluent-card block relative rounded-xl overflow-hidden focus-visible:outline-0 focus-visible:ring-2 focus-visible:ring-accent/50 group h-full"
   href={`/posts/${entry.id}`}
+  data-card
 >
-  <div class="p-3">
+  <div class="reveal-base"></div>
+  <div class="reveal-spot"></div>
+  <div class="p-3 relative z-10">
     <div class="relative w-full h-40 rounded-lg overflow-hidden">
       <img
         class="w-full h-full object-cover select-none"
@@ -46,7 +49,7 @@ const minutes = Math.ceil(remarkPluginFrontmatter.readingMinutes)
       />
     </div>
   </div>
-  <div class="px-5 pb-5 flex flex-col flex-1">
+  <div class="px-5 pb-5 flex flex-col flex-1 relative z-10">
     <div class="flex items-center gap-3 text-xs text-secondary">
       <time datetime={dateStr}>{dateStr}</time>
       <span>{words} 字</span>

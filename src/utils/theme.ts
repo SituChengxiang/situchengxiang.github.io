@@ -12,10 +12,10 @@ const themeKey = "gyoza-theme";
 
 export function getLocalTheme() {
   const local = localStorage.getItem(themeKey);
-  if (local === "dark" || local === "light") {
+  if (local === "dark" || local === "light" || local === "system") {
     return local;
   }
-  return "light";
+  return "system";
 }
 
 export function setLocalTheme(theme: string) {

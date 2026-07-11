@@ -1,19 +1,25 @@
 import { themeAtom } from '@/store/theme'
 import { useAtom } from 'jotai'
 
+type Theme = 'light' | 'dark' | 'system'
+
+const nextTheme: Record<Theme, Theme> = { light: 'dark', dark: 'system', system: 'light' }
+const icons: Record<Theme, string> = { light: 'icon-sun', dark: 'icon-moon', system: 'icon-computer' }
+const labels: Record<Theme, string> = { light: '亮色模式', dark: '暗色模式', system: '跟随系统' }
+
 export function ThemeSwitch() {
   const [theme, setTheme] = useAtom(themeAtom)
 
-  const isDark = theme === 'dark'
+  const current = (theme as Theme)
 
   return (
     <button
-      className="size-9 rounded-full border border-primary bg-white/50 dark:bg-zinc-800/50 backdrop-blur flex items-center justify-center"
+      className="size-9 rounded-full border border-primary bg-white dark:bg-zinc-800 flex items-center justify-center"
       type="button"
-      aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
-      onClick={() => setTheme(isDark ? 'light' : 'dark')}
+      aria-label={labels[current]}
+      onClick={() => setTheme(nextTheme[current])}
     >
-      <i className={`iconfont ${isDark ? 'icon-sun' : 'icon-moon'}`}></i>
+      <i className={`iconfont ${icons[current]}`}></i>
     </button>
   )
 }

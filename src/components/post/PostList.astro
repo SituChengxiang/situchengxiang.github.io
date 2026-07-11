@@ -10,7 +10,7 @@ const { posts } = Astro.props
 ---
 
 <div>
-  <ul class="grid grid-cols-1 md:grid-cols-2 gap-5">
+  <ul class="grid grid-cols-1 md:grid-cols-2 gap-5" data-reveal-bound>
     {
       posts.map((post, index) => (
         <li>
@@ -20,3 +20,59 @@ const { posts } = Astro.props
     }
   </ul>
 </div>
+
+<script>
+  function setupReveal() {
+    const bound = document.querySelector<HTMLElement>('[data-reveal-bound]')
+    if (!bound) return
+
+    const cards = bound.querySelectorAll<HTMLElement>('[data-card]')
+
+    bound.addEventListener('mousemove', (e) => {
+      const mx = e.clientX
+      const my = e.clientY
+
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect()
+        const extended = {
+          left: rect.left - 12,
+          right: rect.right + 12,
+          top: rect.top - 12,
+          bottom: rect.bottom + 12,
+        }
+
+        const spot = card.querySelector<HTMLElement>('.reveal-spot')
+        if (!spot) return
+
+        const isNear = mx >= extended.left && mx <= extended.right && my >= extended.top && my <= extended.bottom
+
+        if (isNear) {
+          card.classList.add('is-active')
+          const x = mx - rect.left
+          const y = my - rect.top
+          spot.style.background = `
+            radial-gradient(250px circle at ${x}px ${y}px,
+              rgba(255,255,255,0.12) 0%,
+              rgba(255,255,255,0.06) 30%,
+              transparent 60%)
+          `
+          spot.style.opacity = '1'
+        } else {
+          card.classList.remove('is-active')
+          spot.style.opacity = '0'
+        }
+      })
+    })
+
+    bound.addEventListener('mouseleave', () => {
+      cards.forEach(card => {
+        card.classList.remove('is-active')
+        const spot = card.querySelector<HTMLElement>('.reveal-spot')
+        if (spot) spot.style.opacity = '0'
+      })
+    })
+  }
+
+  setupReveal()
+  document.addEventListener('swup:content:replace', setupReveal)
+</script>
