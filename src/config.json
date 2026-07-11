@@ -34,13 +34,7 @@
     "yiyan": "当第一颗卫星飞向大气层外，我们便以为自己终有一日会征服宇宙。"
   },
   "color": {
-    "accent": [
-      { "light": "#0396FF", "dark": "#ABDCFF" },
-      { "light": "#0975C8", "dark": "#BBE0FC" },
-      { "light": "#32CCBC", "dark": "#90F7EC" },
-      { "light": "#695B0C", "dark": "#F3E596" },
-      { "light": "#33A6B8", "dark": "#79F1A4" }
-    ],
+    "accent": { "light": "#0396FF", "dark": "#ABDCFF" },
     "bg": {
       "primary": { "light": "#ffffff", "dark": "#1c1c1e" },
       "secondary": { "light": "#f4f4f5", "dark": "#27272a" }

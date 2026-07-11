@@ -42,3 +42,38 @@ html.gray {
 * {
   scrollbar-width: thin;
 }
+
+.fluent-card {
+  position: relative;
+  border: 1px solid rgb(var(--color-border-primary) / 0.5);
+  background: var(--color-bg-primary);
+  box-shadow:
+    0 4px 8px rgb(0 0 0 / 0.08),
+    0 0 2px rgb(0 0 0 / 0.06);
+  transition: border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.fluent-card:hover,
+.fluent-card:focus-visible,
+.fluent-card:focus-within {
+  border-color: rgb(var(--color-border-primary) / 0.7);
+  box-shadow:
+    0 14px 28px rgb(0 0 0 / 0.36),
+    0 0 8px rgb(0 0 0 / 0.12);
+}
+
+[data-theme="dark"] .fluent-card,
+html[data-theme="dark"] .fluent-card {
+  border-color: rgb(var(--color-border-primary) / 0.4);
+  box-shadow:
+    0 4px 8px rgb(0 0 0 / 0.2),
+    0 0 2px rgb(0 0 0 / 0.14);
+}
+
+[data-theme="dark"] .fluent-card:hover,
+html[data-theme="dark"] .fluent-card:hover {
+  border-color: rgb(var(--color-border-primary) / 0.6);
+  box-shadow:
+    0 14px 28px rgb(0 0 0 / 0.36),
+    0 0 8px rgb(0 0 0 / 0.22);
+}

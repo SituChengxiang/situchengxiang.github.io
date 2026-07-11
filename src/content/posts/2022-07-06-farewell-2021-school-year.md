@@ -1,6 +1,7 @@
 ---
 title: 2021学年末的告白
 tags: [life, campus]
+category: 生活
 date: 2022-07-06
 ---
 

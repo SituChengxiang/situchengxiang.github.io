@@ -14,10 +14,8 @@ export function getLocalTheme() {
   const local = localStorage.getItem(themeKey);
   if (local === "dark" || local === "light") {
     return local;
-  } else {
-    setLocalTheme("system");
-    return "system";
   }
+  return "light";
 }
 
 export function setLocalTheme(theme: string) {

@@ -1,7 +1,9 @@
-import { z, defineCollection } from "astro:content";
+import { glob } from 'astro/loaders'
+import { defineCollection } from 'astro:content'
+import { z } from 'astro/zod'
 
 const postsCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: '**/*.md', base: './src/content/posts' }),
   schema: z.object({
     title: z.string(),
     date: z.date(),
@@ -14,40 +16,40 @@ const postsCollection = defineCollection({
     draft: z.boolean().default(false),
     sticky: z.number().default(0),
   }),
-});
+})
 
 const projectsCollection = defineCollection({
-  type: "data",
+  loader: glob({ pattern: '**/*.yaml', base: './src/content/projects' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
     image: z.string(),
-    link: z.string().url(),
+    link: z.url(),
   }),
-});
+})
 
 const specCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: '**/*.md', base: './src/content/spec' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
     comments: z.boolean().default(true),
   }),
-});
+})
 
 const friendsCollection = defineCollection({
-  type: "data",
+  loader: glob({ pattern: '**/*.yaml', base: './src/content/friends' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
     avatar: z.string(),
-    link: z.string().url(),
+    link: z.url(),
   }),
-});
+})
 
 export const collections = {
   posts: postsCollection,
   projects: projectsCollection,
   spec: specCollection,
   friends: friendsCollection,
-};
+}

@@ -1,6 +1,7 @@
 ---
 title: 班干部的这些年
 tags: [campus, life]
+category: 生活
 date: 2025-03-30
 ---
 

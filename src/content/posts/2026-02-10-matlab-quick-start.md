@@ -3,7 +3,6 @@ title: 我校Matlab速通（语法部分）
 tags: [Course, Numerical Methods]
 category: 科学计算
 date: 2026-02-10
-summary: 一篇面向课程作业与数值计算入门的 Matlab 基础语法速查，从变量、矩阵到函数与绘图。
 ---
 
 对于应用物理专业的同学，如果是杨y老师上课，大概不会考得很难。

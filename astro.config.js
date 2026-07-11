@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import { unified } from "@astrojs/markdown-remark";
 import { remarkReadingTime } from "./src/plugins/remarkReadingTime";
 import { rehypeCodeBlock } from "./src/plugins/rehypeCodeBlock";
 import { rehypeTableBlock } from "./src/plugins/rehypeTableBlock";
@@ -34,25 +35,28 @@ export default defineConfig({
   ],
   markdown: {
     syntaxHighlight: false,
-    smartypants: false,
-    remarkPlugins: [
-      remarkMath,
-      remarkDirective,
-      remarkEmbed,
-      remarkSpoiler,
-      remarkReadingTime,
-    ],
-    rehypePlugins: [
-      rehypeHeadingIds,
-      rehypeKatex,
-      rehypeLink,
-      rehypeImage,
-      rehypeHeading,
-      rehypeCodeBlock,
-      rehypeCodeHighlight,
-      rehypeTableBlock,
-    ],
-    remarkRehype: { footnoteLabel: "参考", footnoteBackLabel: "返回正文" },
+    processor: unified({
+      gfm: true,
+      smartypants: false,
+      remarkPlugins: [
+        remarkMath,
+        remarkDirective,
+        remarkEmbed,
+        remarkSpoiler,
+        remarkReadingTime,
+      ],
+      rehypePlugins: [
+        rehypeHeadingIds,
+        rehypeKatex,
+        rehypeLink,
+        rehypeImage,
+        rehypeHeading,
+        rehypeCodeBlock,
+        rehypeCodeHighlight,
+        rehypeTableBlock,
+      ],
+      remarkRehype: { footnoteLabel: "参考", footnoteBackLabel: "返回正文" },
+    }),
   },
   vite: {
     build: {
