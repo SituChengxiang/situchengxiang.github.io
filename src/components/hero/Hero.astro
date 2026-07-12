@@ -20,13 +20,12 @@ import { SocialList } from "./SocialList";
   >
     <div class="mt-[120px] lg:mt-0 w-full max-w-[590px] mx-auto lg:mx-0">
       <h1 class="text-3xl text-center lg:text-left text-balance text-white">
-        Hi there, I'm {hero.name} 👋<br
-        />{hero.bio}
+        Hi there, I'm {hero.name} 👋<br />{hero.bio}
       </h1>
       <div class="text-base text-white/80 mt-3 text-center lg:text-left">
         {hero.description}
       </div>
-      <SocialList className="mt-[60px]" client:load/>
+      <SocialList className="mt-[60px]" client:load />
     </div>
     <div class="mt-20 lg:mt-0 justify-self-center lg:justify-self-start">
       <div
@@ -45,10 +44,13 @@ import { SocialList } from "./SocialList";
       class="mt-10 lg:mt-0 lg:absolute inset-x-0 bottom-0 flex flex-col items-center"
     >
       <p class="text-base text-center text-balance text-white/80" id="hitokoto">
-        :D 获取中...
+        当第一颗卫星飞向大气层外，我们便以为自己终有一日会征服宇宙。
       </p>
       <!-- 本例不能添加链接内容，放在此处只是因为此接口比较方便，也许能够解决大部分的需求-->
-      <script src="https://v1.hitokoto.cn/?c=d&c=h&c=i&c=i&encode=js&select=%23hitokoto" defer is:inline></script>
+      <script
+        src="https://v1.hitokoto.cn/?c=d&c=h&c=i&c=i&encode=js&select=%23hitokoto"
+        defer
+        is:inline></script>
       <div class="mt-7 text-xl animate-bounce">
         <i class="iconfont icon-down"></i>
       </div>

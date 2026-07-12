@@ -7,6 +7,9 @@ category: 教程
 
 其实一直打算改一下自己博客首页的样式，跳动的Material Design大色块很有灵性，但我不是很喜欢。趁着短学期课程设计已经做完并且台风天不想干别的，整改一下。结果一路改下来，从卡片样式到设计语言到整体架构都动了不少。记录一下过程和思考。
 
+> [!NOTE]
+> 本篇仍在AI稿版本，人工修正稿后续再补充
+
 ## Astro markdown 配置迁移
 
 [Astro](https://docs.astro.build/zh-cn/getting-started/) 是一个静态网站生成器，它内置了 markdown 处理能力。在 Astro 7 中，markdown 的插件配置方式发生了变化——原来直接写在 `markdown.remarkPlugins` 和 `markdown.rehypePlugins` 里的插件，现在需要通过 [unified](https://unified.js.org/) 函数来统一配置。

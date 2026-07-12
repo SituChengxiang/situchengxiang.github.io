@@ -14,7 +14,7 @@ export function ThemeSwitch() {
 
   return (
     <button
-      className="size-9 rounded-full border border-primary bg-white dark:bg-zinc-800 flex items-center justify-center"
+      className="size-9 rounded-full border border-primary shadow-lg shadow-zinc-800/5 bg-white/50 dark:bg-zinc-800/50 backdrop-blur flex items-center justify-center"
       type="button"
       aria-label={labels[current]}
       onClick={() => setTheme(nextTheme[current])}

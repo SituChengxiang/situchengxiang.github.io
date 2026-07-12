@@ -25,6 +25,9 @@ const { title, description, image } = Astro.props
 <html lang={site.lang}>
   <head>
     <CommonHead title={title} description={description} image={image} />
+    <link rel="preconnect" href="https://bing.biturl.top" crossorigin />
+    <link rel="preconnect" href="https://v1.hitokoto.cn" />
+    <link rel="dns-prefetch" href="https://www.clarity.ms" />
     <WebAnalytics />
     <ThemeLoader />
     <AccentColorInjector />
