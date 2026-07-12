@@ -163,3 +163,80 @@
 .markdown h4 + * {
   @apply mt-0;
 }
+
+.markdown .admonition {
+  @apply my-5 pl-4 pr-4 py-3 rounded-md border-l-[4px] text-sm leading-relaxed;
+}
+
+.markdown .admonition p:last-child {
+  @apply mb-0;
+}
+
+.markdown .admonition.note {
+  @apply border-[#0969da] bg-[#ddf4ff];
+}
+
+.markdown .admonition.tip {
+  @apply border-[#1a7f37] bg-[#dafbe1];
+}
+
+.markdown .admonition.important {
+  @apply border-[#8250df] bg-[#fbefff];
+}
+
+.markdown .admonition.warning {
+  @apply border-[#9a6700] bg-[#fff8c5];
+}
+
+.markdown .admonition.caution {
+  @apply border-[#cf222e] bg-[#ffebe9];
+}
+
+.markdown .admonition::before {
+  @apply font-bold;
+}
+
+.markdown .admonition.note::before {
+  content: "Note";
+  @apply text-[#0969da];
+}
+
+.markdown .admonition.tip::before {
+  content: "Tip";
+  @apply text-[#1a7f37];
+}
+
+.markdown .admonition.important::before {
+  content: "Important";
+  @apply text-[#8250df];
+}
+
+.markdown .admonition.warning::before {
+  content: "Warning";
+  @apply text-[#9a6700];
+}
+
+.markdown .admonition.caution::before {
+  content: "Caution";
+  @apply text-[#cf222e];
+}
+
+[data-theme="dark"] .markdown .admonition.note {
+  @apply bg-[#0969da]/10;
+}
+
+[data-theme="dark"] .markdown .admonition.tip {
+  @apply bg-[#1a7f37]/10;
+}
+
+[data-theme="dark"] .markdown .admonition.important {
+  @apply bg-[#8250df]/10;
+}
+
+[data-theme="dark"] .markdown .admonition.warning {
+  @apply bg-[#9a6700]/10;
+}
+
+[data-theme="dark"] .markdown .admonition.caution {
+  @apply bg-[#cf222e]/10;
+}

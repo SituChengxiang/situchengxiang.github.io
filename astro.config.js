@@ -10,6 +10,7 @@ import { rehypeHeading } from "./src/plugins/rehypeHeading";
 import remarkDirective from "remark-directive";
 import { remarkSpoiler } from "./src/plugins/remarkSpoiler";
 import { remarkEmbed } from "./src/plugins/remarkEmbed";
+import { remarkAdmonitions } from "./src/plugins/remarkAdmonitions";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
@@ -41,6 +42,7 @@ export default defineConfig({
       remarkPlugins: [
         remarkMath,
         remarkDirective,
+        remarkAdmonitions,
         remarkEmbed,
         remarkSpoiler,
         remarkReadingTime,

@@ -1,5 +1,5 @@
 ---
-title: 博客首页卡片重构记：从 Fluent Design 到设计语言的统一
+title: 博客首页卡片重构记：Fluent和内容的表达
 tags: [css,web,blog,astro]
 date: 2026-07-11
 category: 教程
@@ -7,8 +7,9 @@ category: 教程
 
 其实一直打算改一下自己博客首页的样式，跳动的Material Design大色块很有灵性，但我不是很喜欢。趁着短学期课程设计已经做完并且台风天不想干别的，整改一下。结果一路改下来，从卡片样式到设计语言到整体架构都动了不少。记录一下过程和思考。
 
-> [!NOTE]
-> 本篇仍在AI稿版本，人工修正稿后续再补充
+:::important
+本篇仍在AI稿版本，人工修正稿后续再补充
+:::
 
 ## Astro markdown 配置迁移
 
