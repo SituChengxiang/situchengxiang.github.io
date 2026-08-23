@@ -1,12 +1,13 @@
 ---
 title: 给博客卡片加一个 Reveal Highlight 光效
 tags: [css,js,web,blog]
-date: 2026-07-11
+date: 2026-07-12
 category: 教程
 ---
 
-> [!NOTE]
-> 本篇仍在AI稿版本，人工修正稿后续再补充
+:::note
+本篇仍在AI稿版本，人工修正稿后续再补充
+:::
 
 ![cover](https://i.ibb.co/xKpgyrp7/click-Cover.webp)
 
