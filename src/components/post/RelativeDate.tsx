@@ -1,14 +1,9 @@
 import { getRelativeTime, getFormattedDate } from '@/utils/date'
-import { useEffect, useState } from 'react'
+import { useMemo } from 'react'
 
 export function RelativeDate({ date }: { date: Date }) {
-  const [dateStr, setDateStr] = useState(getFormattedDate(date))
-
-  useEffect(() => {
-    const relative = getRelativeTime(date)
-    if (relative) {
-      setDateStr(relative)
-    }
+  const dateStr = useMemo(() => {
+    return getRelativeTime(date) || getFormattedDate(date)
   }, [date])
 
   return <span>{dateStr}</span>

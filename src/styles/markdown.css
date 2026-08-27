@@ -1,3 +1,13 @@
+.markdown {
+  text-autospace: normal;
+  text-spacing-trim: normal;
+  line-break: strict;
+}
+
+.markdown :is(pre, code, kbd, samp) {
+  text-autospace: no-autospace;
+}
+
 .markdown > :first-child {
   @apply mt-0;
 }
@@ -7,7 +17,10 @@
 }
 
 .markdown p {
-  @apply mb-5 leading-relaxed tracking-wide;
+  @apply mb-5 leading-[1.9] tracking-wide;
+  text-align: justify;
+  word-break: break-all;
+  hanging-punctuation: first last;
 }
 
 .markdown h1 {
@@ -99,6 +112,22 @@
   @apply mt-3 text-secondary text-sm;
 }
 
+.markdown .image-grid {
+  @apply grid grid-cols-2 gap-4 my-5;
+}
+
+.markdown .image-grid p {
+  display: contents;
+}
+
+.markdown .image-grid figure {
+  @apply m-0;
+}
+
+.markdown .image-grid img {
+  @apply w-full h-auto rounded-lg bg-secondary;
+}
+
 .markdown .heading-anchor {
   @apply ml-1 opacity-0 hover:no-underline;
 }
@@ -142,6 +171,14 @@
 .markdown ol ul,
 .markdown ol ol {
   @apply my-3;
+}
+
+.markdown .right-align {
+  @apply text-right;
+}
+
+.markdown .right-align p {
+  @apply text-right;
 }
 
 .markdown .spoiler {

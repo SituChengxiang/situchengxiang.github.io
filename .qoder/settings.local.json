@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git:*)",
+      "Bash(pnpm build 2>&1 | tail -20)",
+      "WebFetch(*)",
+      "Bash(curl -s http://localhost:4321 2>&1 | head -5)",
+      "Bash(curl -s http://localhost:4321/posts/2026-08-23-farewell-2025-school-year 2>&1 | grep -A 30 'image-grid')"
+    ]
+  }
+}

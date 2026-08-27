@@ -3,7 +3,21 @@ import { useLayoutEffect, useState } from 'react'
 export function Flashlight() {
   const [cursorX, setCursorX] = useState(0)
   const [cursorY, setCursorY] = useState(0)
-  const isMobile = !window.matchMedia('(hover: hover)').matches
+  const [isMobile] = useState(() => !window.matchMedia('(hover: hover)').matches)
+
+  useLayoutEffect(() => {
+    if (isMobile) return
+    const handleMouseMove = (event: MouseEvent) => {
+      setCursorX(event.clientX)
+      setCursorY(event.clientY)
+    }
+
+    document.addEventListener('mousemove', handleMouseMove)
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove)
+    }
+  }, [isMobile])
 
   if (isMobile) {
     return null
@@ -16,26 +30,10 @@ export function Flashlight() {
     rgba(0, 0, 0, 0.8) 100%
   )`
 
-  useLayoutEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      setCursorX(event.clientX)
-      setCursorY(event.clientY)
-    }
-
-    document.addEventListener('mousemove', handleMouseMove)
-
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove)
-    }
-  }, [])
-
   return (
     <div
       className="fixed inset-0 z-50 pointer-events-none"
-      style={{
-        backgroundImage,
-        display: isMobile ? 'none' : 'block',
-      }}
+      style={{ backgroundImage }}
     ></div>
   )
 }

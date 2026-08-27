@@ -2,27 +2,23 @@ import { useEffect, useRef, useState } from 'react'
 import { animate } from 'framer-motion'
 import { getDaysInYear, getDiffInDays, getStartOfDay, getStartOfYear } from '@/utils/date'
 
-export function TimelineProgress({ totalPosts }: { totalPosts: number }) {
-  const [currentYear, setCurrentYear] = useState(0)
-  const [dayOfYear, setDayOfYear] = useState(0)
-  const [percentOfYear, setPercentOfYear] = useState(0)
-  const [percentOfToday, setPercentOfToday] = useState(0)
-
-  const updateInfo = () => {
-    const now = new Date()
-    setCurrentYear(now.getFullYear())
-
-    const pastDays = getDiffInDays(getStartOfYear(now), now)
-    setDayOfYear(pastDays)
-    setPercentOfYear((pastDays / getDaysInYear(now)) * 100)
-
-    const pastTime = now.getTime() - getStartOfDay(now).getTime()
-    setPercentOfToday((pastTime / 86400 / 1000) * 100)
+function computeTimeInfo() {
+  const now = new Date()
+  const pastDays = getDiffInDays(getStartOfYear(now), now)
+  const pastTime = now.getTime() - getStartOfDay(now).getTime()
+  return {
+    currentYear: now.getFullYear(),
+    dayOfYear: pastDays,
+    percentOfYear: (pastDays / getDaysInYear(now)) * 100,
+    percentOfToday: (pastTime / 86400 / 1000) * 100,
   }
+}
+
+export function TimelineProgress({ totalPosts }: { totalPosts: number }) {
+  const [timeInfo, setTimeInfo] = useState(computeTimeInfo)
 
   useEffect(() => {
-    updateInfo()
-    const interval = setInterval(updateInfo, 1000)
+    const interval = setInterval(() => setTimeInfo(computeTimeInfo()), 1000)
     return () => {
       clearInterval(interval)
     }
@@ -31,7 +27,7 @@ export function TimelineProgress({ totalPosts }: { totalPosts: number }) {
   return (
     <>
       <p className="mt-4">
-        今天是 {currentYear} 年的第 <CountUp to={dayOfYear} decimals={0} /> 天，今年已过 <CountUp to={percentOfYear} decimals={0} />%，今天已过 <CountUp to={percentOfToday} decimals={3} />%
+        今天是 {timeInfo.currentYear} 年的第 <CountUp to={timeInfo.dayOfYear} decimals={0} /> 天，今年已过 <CountUp to={timeInfo.percentOfYear} decimals={0} />%，今天已过 <CountUp to={timeInfo.percentOfToday} decimals={3} />%
       </p><br></br>
       <p className="text-text-base text-secondary">
         目前共有 <span className="font-medium">{totalPosts}</span> 篇文章
@@ -49,24 +45,24 @@ function CountUp({
   decimals: number
   duration?: number
 }) {
-  const node = useRef<HTMLSpanElement>(null)
-  const prev = useRef(0)
+  const nodeRef = useRef<HTMLSpanElement>(null)
+  const prevRef = useRef(0)
 
   useEffect(() => {
-    if (!node.current) return
+    if (!nodeRef.current) return
 
-    const control = animate(prev.current, to, {
+    const control = animate(prevRef.current, to, {
       duration,
       onUpdate: (value) => {
-        node.current!.textContent = value.toFixed(decimals)
+        nodeRef.current!.textContent = value.toFixed(decimals)
       },
     })
-    prev.current = to
+    prevRef.current = to
 
     return () => {
       control.stop()
     }
   }, [to, decimals, duration])
 
-  return <span ref={node}></span>
+  return <span ref={nodeRef}></span>
 }

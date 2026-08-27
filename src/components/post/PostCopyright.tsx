@@ -1,6 +1,6 @@
 import { author, site } from '@/config.json'
 import { getFormattedDateTime } from '@/utils/date'
-import { useEffect, useState } from 'react'
+import { useMemo } from 'react'
 import { toast } from "react-toastify";
 
 function getPostUrl(slug: string) {
@@ -16,17 +16,13 @@ export function PostCopyright({
   slug: string
   lastMod: Date
 }) {
-  const [lastModStr, setLastModStr] = useState('')
+  const lastModStr = useMemo(() => getFormattedDateTime(lastMod), [lastMod])
   const url = getPostUrl(slug)
 
   function handleCopyUrl() {
     navigator.clipboard.writeText(url)
     toast.success('已复制文章链接')
   }
-
-  useEffect(() => {
-    setLastModStr(getFormattedDateTime(lastMod))
-  }, [lastMod])
 
   return (
     <section className="text-xs leading-loose text-secondary">

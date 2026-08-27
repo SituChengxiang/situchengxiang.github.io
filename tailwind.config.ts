@@ -8,6 +8,10 @@ const config: Config = {
       sans: [
         '"Noto Sans SC"',
         '"Source Han Sans SC"',
+        '"PingFang SC"',
+        '"Microsoft YaHei"',
+        '"Hiragino Sans GB"',
+        "system-ui",
         "sans-serif",
         '"Apple Color Emoji"',
         '"Segoe UI Emoji"',

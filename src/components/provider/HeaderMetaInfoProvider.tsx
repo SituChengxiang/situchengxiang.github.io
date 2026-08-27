@@ -28,7 +28,7 @@ export function HeaderMetaInfoProvider({
     setTitle(title)
     setDescription(description)
     setSlug(slug)
-  }, [pathName, title, description, slug])
+  }, [pathName, title, description, slug, setPathName, setTitle, setDescription, setSlug])
 
   return null
 }

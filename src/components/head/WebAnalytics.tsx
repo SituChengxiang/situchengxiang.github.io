@@ -37,6 +37,7 @@ function GoogleAnalytics({
   return (
     <>
       <script async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
+      {/* eslint-disable-next-line @eslint-react/dom-no-dangerously-set-innerhtml */}
       <script dangerouslySetInnerHTML={{
         __html: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -56,6 +57,7 @@ function MicrosoftClarity({
 }) {
   return (
     <>
+      {/* eslint-disable-next-line @eslint-react/dom-no-dangerously-set-innerhtml */}
       <script dangerouslySetInnerHTML={{
         __html: `(function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

@@ -6,8 +6,9 @@ export function Waline({ serverURL }: { serverURL: string }) {
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    const el = ref.current
     const walineInst = init({
-      el: ref.current,
+      el,
       serverURL,
       dark: "[data-theme='dark']",
       login: 'force',
@@ -20,7 +21,7 @@ export function Waline({ serverURL }: { serverURL: string }) {
     })
 
     return () => {
-      if (ref.current) {
+      if (el) {
         walineInst?.destroy()
       }
     }

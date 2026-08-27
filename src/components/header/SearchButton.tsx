@@ -3,7 +3,13 @@ import { useCurrentModal, useModal } from '@/components/ui/modal'
 import { useEffect, useState } from 'react'
 import { useDebounceValue } from '@/hooks/useDebounceValue'
 
-let pagefind: any = null
+interface PagefindResult {
+  url: string
+  meta: { title: string }
+  excerpt: string
+}
+
+let pagefind: { search: (query: string) => Promise<{ results: { data: () => Promise<PagefindResult> }[] }> } | null = null
 async function loadPagefind() {
   if (import.meta.env.PROD && !pagefind) {
     const url = '/pagefind/pagefind.js'
@@ -37,7 +43,7 @@ export function SearchButton() {
 function SearchPanel() {
   const [keyword, setKeyword] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-  const [results, setResults] = useState<any[]>([])
+  const [results, setResults] = useState<PagefindResult[]>([])
   const debouncedKeyword = useDebounceValue(keyword, 350)
 
   const { dismiss } = useCurrentModal()
@@ -51,7 +57,7 @@ function SearchPanel() {
     await loadPagefind()
     if (pagefind) {
       const res = await pagefind.search(value)
-      const nextResults = await Promise.all(res.results.map((r: any) => r.data()))
+      const nextResults = await Promise.all(res.results.map((r) => r.data()))
       setResults(nextResults)
     }
     setIsLoading(false)
@@ -133,6 +139,7 @@ function SearchPanel() {
               onClick={dismiss}
             >
               <div className="font-semibold">{item.meta.title}</div>
+              {/* eslint-disable-next-line @eslint-react/dom-no-dangerously-set-innerhtml */}
               <p className="text-sm" dangerouslySetInnerHTML={{ __html: item.excerpt }}></p>
             </a>
           )

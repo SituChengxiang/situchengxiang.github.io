@@ -6,12 +6,6 @@ import { themeAtom } from '@/store/theme'
 export function ThemeProvider() {
   const theme = useAtomValue(themeAtom)
 
-  function handlePrefersColorSchemeChange(event: MediaQueryListEvent) {
-    if (theme === 'system') {
-      changePageTheme(event.matches ? 'dark' : 'light')
-    }
-  }
-
   useEffect(() => {
     setLocalTheme(theme)
 
@@ -22,6 +16,13 @@ export function ThemeProvider() {
     }
 
     const query = window.matchMedia('(prefers-color-scheme: dark)')
+
+    function handlePrefersColorSchemeChange(event: MediaQueryListEvent) {
+      if (theme === 'system') {
+        changePageTheme(event.matches ? 'dark' : 'light')
+      }
+    }
+
     query.addEventListener('change', handlePrefersColorSchemeChange)
 
     return () => {

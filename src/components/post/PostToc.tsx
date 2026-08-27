@@ -3,7 +3,6 @@ import type { MarkdownHeading } from 'astro'
 import clsx from 'clsx'
 import { useAtomValue } from 'jotai'
 import { startTransition, useEffect, useRef, useState } from 'react'
-
 function useActiveItem() {
   const [activeItem, setActiveItem] = useState('')
   const scrollY = useAtomValue(pageScrollLocationAtom)
@@ -67,6 +66,8 @@ export function TocItem({
 }) {
   const itemRef = useRef<HTMLLIElement>(null)
   const scrollDirection = useAtomValue(pageScrollDirectionAtom)
+  const scrollDirectionRef = useRef(scrollDirection)
+  scrollDirectionRef.current = scrollDirection
 
   useEffect(() => {
     if (!isActive) return
@@ -84,7 +85,7 @@ export function TocItem({
     const itemBottom = itemTop + itemHeight
 
     if (itemTop < 0 || itemBottom > containerHeight) {
-      if (scrollDirection === 'up') {
+      if (scrollDirectionRef.current === 'up') {
         $container.scrollTop = itemOffsetTop - containerHeight + itemHeight
 
       } else {

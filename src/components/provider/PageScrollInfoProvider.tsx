@@ -6,31 +6,34 @@ import { pageScrollLocationAtom, pageScrollDirectionAtom } from '@/store/scrollI
 export function PageScrollInfoProvider() {
   const setScrollLocation = useSetAtom(pageScrollLocationAtom)
   const setScrollDirection = useSetAtom(pageScrollDirectionAtom)
-  const prevScrollY = useRef(0)
+  const prevScrollYRef = useRef(0)
 
-  const scrollHandler = throttle(
-    () => {
-      let currentTop = document.documentElement.scrollTop
+  const scrollHandlerRef = useRef(
+    throttle(
+      () => {
+        let currentTop = document.documentElement.scrollTop
 
-      if (currentTop === 0) {
-        const bodyStyle = document.body.style
-        if (bodyStyle.position === 'fixed') {
-          const bodyTop = bodyStyle.top
-          currentTop = Math.abs(parseInt(bodyTop, 10))
+        if (currentTop === 0) {
+          const bodyStyle = document.body.style
+          if (bodyStyle.position === 'fixed') {
+            const bodyTop = bodyStyle.top
+            currentTop = Math.abs(parseInt(bodyTop, 10))
+          }
         }
-      }
 
-      setScrollDirection(prevScrollY.current - currentTop > 0 ? 'up' : 'down')
-      prevScrollY.current = currentTop
-      setScrollLocation(currentTop)
-    },
-    16,
-    {
-      leading: false,
-    },
+        setScrollDirection(prevScrollYRef.current - currentTop > 0 ? 'up' : 'down')
+        prevScrollYRef.current = currentTop
+        setScrollLocation(currentTop)
+      },
+      16,
+      {
+        leading: false,
+      },
+    ),
   )
 
   useLayoutEffect(() => {
+    const scrollHandler = scrollHandlerRef.current
     scrollHandler()
     window.addEventListener('scroll', scrollHandler)
     return () => {

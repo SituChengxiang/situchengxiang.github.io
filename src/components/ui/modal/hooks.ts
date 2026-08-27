@@ -10,12 +10,12 @@ type ModalProps = {
 
 export function useModal() {
   const id = useId();
-  const currentCount = useRef(0);
+  const currentCountRef = useRef(0);
   const setModalStack = useSetAtom(modalStackAtom);
 
   return {
     present(props: ModalProps) {
-      const modalId = `${id}-${currentCount.current++}`;
+      const modalId = `${id}-${currentCountRef.current++}`;
       const modalProps = {
         ...props,
         id: props.id ?? modalId,
