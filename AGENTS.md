@@ -33,6 +33,15 @@ This file provides guidance to the AI agent when working with code in this repos
 - Frontmatter 中 `draft: true` 的文章在开发环境可见，生产构建时隐藏
 - 友链（`src/content/friends/`）和项目（`src/content/projects/`）使用 YAML 格式
 
+## 文章校对
+
+- 校对文章时先通读并建立问题清单，不要一开始就直接修改文件。
+- 将问题区分为明确错误和待确认表达：明确错误包括错别字、重复字、成分残缺、搭配不当和明显标点错误；活动名称、内部术语、个人口语和作者背景相关的表达，不能仅因外部读者不了解就判定为错误。
+- 段末两个空格属于 Markdown 换行约定，不纳入错别字和语病检查。
+- 对待确认表达先询问作者；作者确认其含义后原样保留，不擅自改成书面表达。
+- 修改时按小批次处理，每次只改确定的问题，优先使用短而唯一的文本定位，避免整段替换和顺手改写叙述口吻。
+- 修改后重新扫描已确认的问题，并运行 `pnpm exec astro check`；不要把 `git diff --check` 对段末两个空格的提示当作内容错误。
+
 ## 架构要点
 
 - Astro 静态站点 + React 交互组件（使用 `client:only="react"`）
