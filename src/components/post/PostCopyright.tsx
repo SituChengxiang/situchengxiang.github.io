@@ -1,5 +1,5 @@
 import { author, site } from '@/config.json'
-import { getFormattedDateTime } from '@/utils/date'
+import { getFormattedDateOnly } from '@/utils/date'
 import { useMemo } from 'react'
 import { toast } from "react-toastify";
 
@@ -16,7 +16,7 @@ export function PostCopyright({
   slug: string
   lastMod: Date
 }) {
-  const lastModStr = useMemo(() => getFormattedDateTime(lastMod), [lastMod])
+  const lastModStr = useMemo(() => getFormattedDateOnly(lastMod), [lastMod])
   const url = getPostUrl(slug)
 
   function handleCopyUrl() {

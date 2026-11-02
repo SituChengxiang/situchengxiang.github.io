@@ -26,9 +26,7 @@ export function getRelativeTime(startDate: Date, endDate = new Date()) {
 
 // 获取一个格式化的日期，格式为：2024 年 1 月 1 日 星期一
 export function getFormattedDate(date: Date) {
-  const year = date.getFullYear() % 100;
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
+  const datePart = getFormattedDatePart(date);
   const week = [
     "星期日",
     "星期一",
@@ -39,7 +37,7 @@ export function getFormattedDate(date: Date) {
     "星期六",
   ][date.getDay()];
 
-  return `${year} 年 ${month} 月 ${day} 日 ${week}`;
+  return `${datePart} ${week}`;
 }
 
 // 数字前补 0
@@ -49,13 +47,23 @@ function padZero(number: number, len = 2) {
 
 // 获取格式化后的日期时间，格式：2024 年 01 月 01 日 12:00
 export function getFormattedDateTime(date: Date) {
-  const year = date.getFullYear();
-  const month = padZero(date.getMonth() + 1);
-  const day = padZero(date.getDate());
   const hours = padZero(date.getHours());
   const minutes = padZero(date.getMinutes());
 
-  return `${year} 年 ${month} 月 ${day} 日 ${hours}:${minutes}`;
+  return `${getFormattedDatePart(date)} ${hours}:${minutes}`;
+}
+
+// 获取格式化后的日期，格式：2024 年 01 月 01 日
+export function getFormattedDateOnly(date: Date) {
+  return getFormattedDatePart(date);
+}
+
+function getFormattedDatePart(date: Date) {
+  const year = date.getFullYear();
+  const month = padZero(date.getMonth() + 1);
+  const day = padZero(date.getDate());
+
+  return `${year} 年 ${month} 月 ${day} 日`;
 }
 
 // 获取两个日期的相差的天数

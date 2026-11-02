@@ -1,5 +1,4 @@
 ---
-import { toInteger } from "lodash-es";
 import { slugify } from "@/utils/content";
 
 interface Props {
@@ -20,6 +19,9 @@ const { title, category, tags, imageUrl, date, words, readingMinutes } =
 const defaultImageUrl =
   imageUrl ||
   "https://bing.biturl.top/?resolution=UHD&format=image&index=0&mkt=zh-CN";
+const dateStr = date
+  ? new Date(date).toISOString().slice(0, 10).replaceAll("-", "/")
+  : undefined;
 ---
 
 <div class="relative w-full h-[320px] md:h-[400px]">
@@ -67,7 +69,7 @@ const defaultImageUrl =
           date && (
             <span class="flex items-center gap-1">
               <i class="iconfont icon-calendar" />
-              {new Date(date).toLocaleDateString()}
+              {dateStr}
             </span>
           )
         }
@@ -83,7 +85,7 @@ const defaultImageUrl =
           readingMinutes && (
             <span class="flex items-center gap-1">
               <i class="iconfont icon-timer" />
-              {toInteger(readingMinutes)} 分钟
+              {Math.ceil(readingMinutes)} 分钟
             </span>
           )
         }
