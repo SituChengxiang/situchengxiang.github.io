@@ -20,7 +20,7 @@ D-Bus 会话总线上，`org.freedesktop.Notifications` 是通知的唯一入口
 busctl --user list | grep -w org.freedesktop.Notifications
 ```
 
-```
+```bash
 org.freedesktop.Notifications    1882  mako    kuan    :1.75    user@1000.service
 ```
 
@@ -30,7 +30,7 @@ pid 1882，进程名 mako。实锤了，就是它。
 
 奇怪的地方在这里：我 autostart 里没有 mako，`~/.config/autostart/` 里也没有，但 `systemctl --user status mako.service` 显示
 
-```
+```bash
 Loaded: loaded (/usr/lib/systemd/user/mako.service; disabled; preset: enabled)
 Active: active (running) since Tue 2026-10-13 19:01:42 CST
 ```
@@ -58,7 +58,7 @@ Exec=/usr/bin/plasma_waitforname org.freedesktop.Notifications
 
 这条是 Plasma 的守卫：它不注册名字，只是等真正的设计者（plasmashell）来注册，防止桌面还没起来时通知被提前处理。问题在于 **dbus-broker 对同一个服务名只承认扫描顺序里第一个遇到的激活文件**，第二个直接判为重复丢弃。翻 `journalctl --user` 能看到它本人说的话：
 
-```
+```bash
 dbus-broker-launch: Ignoring duplicate name 'org.freedesktop.Notifications' in service file '/usr/share//dbus-1/services/org.kde.plasma.Notifications.service'
 ```
 
@@ -79,7 +79,7 @@ EOF
 
 dbus-broker 盯着这些目录，写完会自动 reload，不用重启什么。日志立刻翻过来了：
 
-```
+```bash
 Ignoring duplicate name 'org.freedesktop.Notifications' in service file '/usr/share//dbus-1/services/fr.emersion.mako.service'
 Ignoring duplicate name 'org.freedesktop.Notifications' in service file '/usr/share//dbus-1/services/org.kde.plasma.Notifications.service'
 ```
@@ -91,7 +91,7 @@ Hyprland 那边完全不受影响：那边 mako 是 `exec-once = ... mako ...` �
 :::note
 别用 `Hidden=true`。我第一版就是写的这个——在用户目录放一份同名文件，内容只有 `[D-BUS Service]` 加 `Hidden=true`。它确实成功屏蔽了 mako，但 dbus-broker 的重复名判定发生在 Hidden 判定之前，于是这个名字变成"可激活、但没有实现者"的状态。结果更难看：
 
-```
+```bash
 Failed to show notification: 为 org.freedesktop.Notifications 调用 StartServiceByName 时出错：已到超时限制
 ```
 
@@ -112,13 +112,13 @@ grep -o libnotificationmanager /proc/$(pgrep -x plasmashell)/maps | sort -u
 
 排查过程中日志一直在抱怨另一份文件：
 
-```
+```bash
 Missing 'D-Bus Service' section in service file '/home/kuan/.local/share/dbus-1/services/org.freedesktop.secrets.service'
 ```
 
 打开一看，第一行手滑多打了个等号：`=[D-BUS Service]`，整个文件被 dbus 忽略，`org.freedesktop.secrets` 变成不可按需激活。但更关键的是这份文件里 `Exec=/usr/bin/kwalletd6` 的目标本身就是错的——kwalletd6 并不注册 `org.freedesktop.secrets`，它只注册 `org.kde.kwalletd6`，而且自己还是 Secret Service 的客户端（链接了 libsecret）。总线上看一眼就知道谁在提供：
 
-```
+```bash
 org.freedesktop.secrets    1270  ksecretd
 org.kde.kwalletd6          1734  kwalletd6
 ```
