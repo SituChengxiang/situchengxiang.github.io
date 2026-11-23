@@ -26,8 +26,8 @@ jobs:
       #   with:
       #     node-version: 26
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v6
+      - name: Setup pnpm and Node.js
+        uses: pnpm/setup@v1
         with:
           version: 12
           runtime: node@26
