@@ -5,6 +5,7 @@ category: 生活
 date: 2026-10-10
 lastMod: 2026-10-11
 summary: 2025-2026学年的一篇议论性文章，看看AI，也看看我们自己和我们的生活
+draft: true
 ---
 
 :::note

@@ -19,7 +19,8 @@
 .markdown p {
   @apply mb-5 leading-[1.9] tracking-wide;
   text-align: justify;
-  word-break: break-all;
+  word-break: normal;
+  overflow-wrap: break-word;
   hanging-punctuation: first last;
 }
 

@@ -4,7 +4,6 @@ date: 2026-10-16
 category: 备忘
 tags: [linux, kde, hyprland, dbus]
 summary: KDE 和 Hyprland 共用一个用户，但 org.freedesktop.Notifications 这个 D-Bus 名字只能有一个主人。记录一次通知服务争夺战的排查过程、最终修法，以及两个容易踩的坑。
-draft: true
 ---
 
 :::note
